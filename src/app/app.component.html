@@ -1,0 +1,25 @@
+<div class="page">
+  <div class="page-header">
+    <mat-toolbar>Video Viewer</mat-toolbar>
+  </div>
+  <div class="page-content">
+    <div class="side-nav">
+      <mat-tab-group mat-stretch-tabs>
+        <mat-tab label="History" class="tab-label">
+          <app-history [historyList]="historyList"></app-history>
+        </mat-tab>
+        <mat-tab label="Bookmarks" class="tab-label">
+          <app-bookmarks [bookmarksList]="bookmarksList"></app-bookmarks>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="content">
+      <div class="searchbar-container">
+        <app-searchbar (search)="onSearchItem($event)"></app-searchbar>
+      </div>
+      <div class="video-container">
+        <app-videoview [url]="url"></app-videoview>
+      </div>
+    </div>
+  </div>
+</div>

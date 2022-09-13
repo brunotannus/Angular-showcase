@@ -1,0 +1,38 @@
+.page {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.page-content {
+  display: flex;
+  height: 95%;
+}
+.side-nav {
+  border-right: 2px solid #f5f5f5;
+  width: 300px;
+}
+.tab-label {
+  font-size: 0.7em;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 3rem;
+}
+::ng-deep .mat-tab-header-pagination {
+  display: none !important;
+}
+
+::ng-deep .mat-tab-header {
+  overflow-x: scroll !important;
+}
+
+::ng-deep .mat-tab-label-container {
+  overflow: visible !important;
+}
+
+::ng-deep .mat-tab-header::-webkit-scrollbar {
+  display: none;
+}
