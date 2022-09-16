@@ -38,7 +38,7 @@ export class VideoviewComponent implements OnInit, OnChanges, AfterViewInit {
     this.videoId = this.url.split('v=')[1].split('&')[0];
     this.height = window.innerHeight/2;
     this.width = window.innerWidth/2;
-    console.log("changes");
+    console.log(this.url);
   }
 
 
