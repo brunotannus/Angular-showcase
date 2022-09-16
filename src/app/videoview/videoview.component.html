@@ -1,18 +1,8 @@
-<!-- <youtube-player
-  videoId="videoID"
-  suggestedQuality="highres"
-  [height]="600"
-  [width]="1080"
-  [startSeconds]="43"
-  [endSeconds]="60"
->
-</youtube-player> -->
-
-<iframe
-  width="1080"
-  height="600"
-  src="url"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<div class="player">
+  <youtube-player
+  [videoId]="videoId"
+  suggestedQuality="highres" 
+  [height]="height"
+  [width]="width" >
+</youtube-player>
+</div>

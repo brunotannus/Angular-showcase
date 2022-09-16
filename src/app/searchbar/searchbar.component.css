@@ -3,12 +3,31 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  max-width: initial;
 }
-.searchbar {
-  width: 90%;
+
+.searchbar{
+  width: 80%;
 }
+
+@media screen and (max-width: 1000px) {
+  .searchbar-container{
+    position: relative;
+    width: 90%;
+
+  }
+
+  .searchbar{
+    width: 80%;
+  }
+
+  .submit-btn .label {
+    display: none;
+  }
+}
+ 
 .submit-btn {
   margin-left: 1rem;
   margin-bottom: 1rem;

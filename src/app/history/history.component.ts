@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +8,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
   @Input()
+
   historyList: string[] = [];
+  url: string = '';
+
+  ngOnInit(): void {}
 
   constructor() {}
 
-  ngOnInit(): void {}
+  @Output() newBookmark: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output() playAgain: EventEmitter<string> = new EventEmitter<string>();
+
+  onClick(i: number): void{
+    this.newBookmark.emit(this.historyList[i]);
+  }
+
+  onPlay(i: number): void {
+    this.playAgain.emit(this.historyList[i]);
+  }
+  
 }

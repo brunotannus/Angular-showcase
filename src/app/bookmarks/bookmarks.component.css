@@ -1,0 +1,7 @@
+.invisibleBtn{
+    max-width: 75%;
+    word-wrap: break-word;
+    padding: 1em 0;
+    background-color: transparent;
+    border: 0;
+}

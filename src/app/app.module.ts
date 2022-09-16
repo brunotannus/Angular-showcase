@@ -21,6 +21,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmbedVideoService } from 'ngx-embed-video';
+import { HttpClientModule } from '@angular/common/http';
+
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
@@ -45,8 +49,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     YouTubePlayerModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    TextFieldModule,
   ],
-  providers: [],
+  providers: [EmbedVideoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

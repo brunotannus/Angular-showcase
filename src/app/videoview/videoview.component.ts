@@ -4,29 +4,42 @@ import {
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
-import { EmbedVideoService } from 'ngx-embed-video';
+
+import { fromEvent, Observable, Subscription } from "rxjs";
 
 @Component({
   selector: 'app-videoview',
   templateUrl: './videoview.component.html',
   styleUrls: ['./videoview.component.css'],
+  template: '<youtube-player videoId="dQw4w9WgXcQ"></youtube-player>',
 })
 export class VideoviewComponent implements OnInit, OnChanges, AfterViewInit {
   @Input()
-  public url: string = 'www.youtube.com/embed/fyYteLB6vbM';
 
-  constructor(private embedService: EmbedVideoService) {}
+  url: string = '';
+  videoId: string = '';
 
-  ngOnInit(): void {}
+  height: number = 0;
+  width: number = 0;
+
+  constructor() {}
+
+  ngOnInit() {
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
+    
+  }
 
   ngAfterViewInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['url']) {
-      this.url = changes['url'].currentValue.replace('watch?v=', 'embed/');
-      console.log(this.url);
-    }
+  ngOnChanges(): void {
+    this.videoId = this.url.split('v=')[1].split('&')[0];
+    this.height = window.innerHeight/2;
+    this.width = window.innerWidth/2;
+    console.log("changes");
   }
+
+
 }

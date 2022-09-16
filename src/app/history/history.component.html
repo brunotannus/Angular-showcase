@@ -1,6 +1,10 @@
 <mat-list>
-  <mat-list-item *ngFor="let historyItem of historyList">
-    <mat-label>{{ historyItem }}</mat-label>
+  <mat-list-item *ngFor="let historyItem of historyList; let i = index">
+      <button class="invisibleBtn" (click)="onPlay(i)">{{ historyItem }}</button>
+      <button class="bookmark-btn" mat-raised-button color="primary" (click)="onClick(i)">
+        <mat-icon>bookmark</mat-icon>
+      </button>
+
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
